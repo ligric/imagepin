@@ -5,7 +5,7 @@
         <ResourceDictionary>
             <Style TargetType="Rectangle">
                 <Setter Property="Focusable" Value="False" />
-                <Setter Property="Fill" Value="Red" />
+                <Setter Property="Fill" Value="#bbbbbb" />
                 <Setter Property="Tag" Value="{Binding RelativeSource={RelativeSource AncestorType=Window}}" />
                 <EventSetter Event="MouseLeftButtonDown" Handler="Resize_Init"/>
                 <EventSetter Event="MouseLeftButtonUp" Handler="Resize_End"/>

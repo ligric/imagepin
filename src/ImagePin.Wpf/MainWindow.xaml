@@ -5,11 +5,12 @@
 
     <Grid>
 
-        <Grid Margin="10" local:WindowDrag.EnableDrag="True" Background="Yellow">
-            
+        <Grid Margin="10" local:WindowDrag.EnableDrag="True">
+            <Image x:Name="image" Source="default.png"/>
         </Grid>
 
 
+        
         <local:RezizingBorderUserControl/>
 
     </Grid>
