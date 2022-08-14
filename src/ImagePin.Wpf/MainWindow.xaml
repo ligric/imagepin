@@ -6,7 +6,13 @@
     <Grid>
 
         <Grid Margin="10" local:WindowDrag.EnableDrag="True">
-            <Image x:Name="image" Source="default.png"/>
+            <Image x:Name="image" Source="default.png">
+                <Image.ContextMenu>
+                    <ContextMenu StaysOpen="true">
+                        <MenuItem Header="Заменить" Click="ChangeImageClicked"/>
+                    </ContextMenu>
+                </Image.ContextMenu>
+            </Image>
         </Grid>
 
 

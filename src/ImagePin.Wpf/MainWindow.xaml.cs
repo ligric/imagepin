@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using Microsoft.Win32;
+using System;
+using System.Windows;
+using System.Windows.Media.Imaging;
 
 namespace ImagePin.Wpf
 {
@@ -17,6 +20,13 @@ namespace ImagePin.Wpf
         private void OnWindowDeactivated(object sender, System.EventArgs e)
         {
             resizeModeControl.Visibility = Visibility.Collapsed;
+        }
+
+        private void ChangeImageClicked(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+                image.Source = new BitmapImage(new Uri(openFileDialog.FileName));
         }
     }
 }
