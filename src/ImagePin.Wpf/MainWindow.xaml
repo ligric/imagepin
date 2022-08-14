@@ -11,13 +11,33 @@
                     <ContextMenu StaysOpen="true">
                         <MenuItem Header="Заменить" Click="ChangeImageClicked"/>
                         <MenuItem Header="Закрыть" Click="OnCloseClicked"/>
+                        <MenuItem Header="Пропорциональное маштабирование"
+                                  IsCheckable="True"
+                                  IsChecked="{Binding IsProportionalResizing, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </ContextMenu>
                 </Image.ContextMenu>
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Stretch" Value="Fill"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsProportionalResizing}" Value="True">
+                                <Setter Property="Stretch" Value="Uniform"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
             </Image>
         </Grid>
 
 
-        <local:RezizingBorderUserControl x:Name="resizeModeControl"/>
+        <Grid x:Name="resizeModeControl">
+            <local:RezizingBorderUserControl/>
+            <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="{Binding ElementName=image, Path=ActualWidth, StringFormat={}{0:F0}}" Foreground="#17b3a6"/>
+                <TextBlock Text="x" Foreground="#17b3a6"/>
+                <TextBlock Text="{Binding ElementName=image, Path=ActualHeight, StringFormat={}{0:F0}}" Foreground="#17b3a6"/>
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>
