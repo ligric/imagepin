@@ -8,5 +8,15 @@ namespace ImagePin.Wpf
         {
             InitializeComponent();
         }
+
+        private void OnWindowActivated(object sender, System.EventArgs e)
+        {
+            resizeModeControl.Visibility = Visibility.Visible;
+        }
+
+        private void OnWindowDeactivated(object sender, System.EventArgs e)
+        {
+            resizeModeControl.Visibility = Visibility.Collapsed;
+        }
     }
 }
