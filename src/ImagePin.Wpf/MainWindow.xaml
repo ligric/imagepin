@@ -10,6 +10,7 @@
                 <Image.ContextMenu>
                     <ContextMenu StaysOpen="true">
                         <MenuItem Header="Заменить" Click="ChangeImageClicked"/>
+                        <MenuItem Header="Закрыть" Click="OnCloseClicked"/>
                     </ContextMenu>
                 </Image.ContextMenu>
             </Image>

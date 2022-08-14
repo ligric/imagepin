@@ -8,19 +8,16 @@ namespace ImagePin.Wpf
     public partial class MainWindow : Window
     {
         public MainWindow()
-        {
-            InitializeComponent();
-        }
+            => InitializeComponent();
 
-        private void OnWindowActivated(object sender, System.EventArgs e)
-        {
-            resizeModeControl.Visibility = Visibility.Visible;
-        }
+        private void OnWindowActivated(object sender, EventArgs e)
+            => resizeModeControl.Visibility = Visibility.Visible;
 
-        private void OnWindowDeactivated(object sender, System.EventArgs e)
-        {
-            resizeModeControl.Visibility = Visibility.Collapsed;
-        }
+        private void OnWindowDeactivated(object sender, EventArgs e)
+            => resizeModeControl.Visibility = Visibility.Collapsed;
+
+        private void OnCloseClicked(object sender, RoutedEventArgs e)
+            => Environment.Exit(0);
 
         private void ChangeImageClicked(object sender, RoutedEventArgs e)
         {
